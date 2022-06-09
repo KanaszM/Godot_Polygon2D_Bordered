@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://nModule_Poly2D_Bordered.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fxLine00.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.496, 0.804, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1 )
+
+[node name="nTest_Scene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 705.0
+margin_bottom = 449.0
+
+[node name="nModule_Poly2D_Bordered" parent="." instance=ExtResource( 1 )]
+position = Vector2( -65, -100 )
+color = Color( 0, 0.294118, 0.631373, 1 )
+polygon = PoolVector2Array( 142, 123, 86, 261, 276, 355, 347, 177, 329, 170, 281, 217, 200, 257, 186, 187 )
+bBorderShowBehindParent = false
+iBorderWidth = 10
+resBorderTexture = ExtResource( 2 )
+resBorderGradient = SubResource( 1 )
+
+[node name="nModule_Poly2D_Bordered2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -14, -25 )
+polygon = PoolVector2Array( 367, 108, 353, 226, 515, 134, 452, 46 )
+iBorderWidth = 20
+
+[node name="nModule_Poly2D_Bordered3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 9, -1 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( 49, 272, 193, 318, 358, 305, 454, 254, 533, 231, 518, 344, 434, 372, 174, 385, 53, 392, 32, 311 )
+bBorderShowBehindParent = false
+iBorderWidth = 25
+iBorderJointMode = 0
+cBorderColor = Color( 0.0156863, 0.529412, 0.505882, 1 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 94.0
+margin_top = 23.0
+margin_right = 307.0
+margin_bottom = 37.0
+text = "Texture + Gradient, Behind Parent"
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 403.0
+margin_top = 181.0
+margin_right = 671.0
+margin_bottom = 195.0
+text = "Untextured, Behind Parent, Smooth Edges"
+
+[node name="Label3" type="Label" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 225.0
+margin_top = 403.0
+margin_right = 438.0
+margin_bottom = 417.0
+text = "Untextured, Colored, Straight Edges"
